@@ -61,17 +61,30 @@ const products = [
     plusButton.addEventListener('click', ()=>{
         let currentValue = parseInt(value.textContent);
         value.textContent = currentValue + 1;
+        const yourItem = cartItems.find(item => item.name === product.name);
+        if (yourItem){
+          yourItem.quantity += 1;
+        }
         cartUpdate();
     })
     minusButton.addEventListener('click', ()=>{
         let currentValue = parseInt(value.textContent);
         if(currentValue>1){
             value.textContent = currentValue - 1;
+            const yourItem = cartItems.find(item => item.name === product.name);
+            if (yourItem){
+              yourItem.quantity -= 1;
+            }
+
+            cartUpdate();
         }else{
             buttonInActive.style.display = 'flex';
             buttonActive.style.display = 'none';
             img.style.border = 'none';
+            cartItems = cartItems.filter(item => item.name !== product.name);
+            cartUpdate();
         }
+       
         
     })
 
@@ -83,27 +96,64 @@ function cartUpdate(){
     const cart = document.getElementById('cart');
     const cartCount = cartItems.reduce((total, item)=> total + item.quantity, 0);
     const cartTotal = cartItems.reduce((total, item)=> total + (item.price * item.quantity), 0);
-    cart.innerHTML = `
+    if(cartCount === 0){
+      cart.innerHTML = `
+    <h1>Your Cart (<span>0</span>)</h1>
+            <img src="images/illustration-empty-cart.svg" alt="Your cart">
+            <p>Your added items will appear here</p>`
+    
+    }else{
+      cart.innerHTML = `
     <h1>Your Cart (<span>${cartCount}</span>)</h1>
     <div class="cart-items">
-    ${cartItems.map(item=>{
-        return `
-        <div class="cart-items">
-            <div class="cart-item-name">
-              ${item.description}
-            </div>
-            <div class="item-info">
-                <span class="cart-item-quantity">${item.quantity}x</span>
-                <span class="cart-item-price"><span class="mark">@ </span>$${item.price.toFixed(2)}</span>
-                <span class="cart-item-total">$${(item.price * item.quantity).toFixed(2)}</span>
-            </div>
-            <hr>
+    ${cartItems.map(item => `
+      <div class="cart-item">
+        <div class="cart-item-name">${item.description}</div>
+        <div class="item-info">
+          <span class="cart-item-quantity">${item.quantity}x</span>
+          <span class="cart-item-price"><span class="mark">@ </span>$${item.price.toFixed(2)}</span>
+          <span class="cart-item-total">$${(item.price * item.quantity).toFixed(2)}</span>
+          <button type="button" class="delete-item-cart" data-name="${item.name}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg>
+          </button>
         </div>
-        `;
-    }).join('')}
+        <hr>
+      </div>
+    `).join('')}
     </div>
     <div id="cart-total">
         <p>Order Total <span>$${cartTotal.toFixed(2)}</span></p>
-    </div>`
+    </div>
+    <div id="carbon-neutral">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" fill="none" viewBox="0 0 21 20"><path fill="#1EA575" d="M8 18.75H6.125V17.5H8V9.729L5.803 8.41l.644-1.072 2.196 1.318a1.256 1.256 0 0 1 .607 1.072V17.5A1.25 1.25 0 0 1 8 18.75Z"/><path fill="#1EA575" d="M14.25 18.75h-1.875a1.25 1.25 0 0 1-1.25-1.25v-6.875h3.75a2.498 2.498 0 0 0 2.488-2.747 2.594 2.594 0 0 0-2.622-2.253h-.99l-.11-.487C13.283 3.56 11.769 2.5 9.875 2.5a3.762 3.762 0 0 0-3.4 2.179l-.194.417-.54-.072A1.876 1.876 0 0 0 5.5 5a2.5 2.5 0 1 0 0 5v1.25a3.75 3.75 0 0 1 0-7.5h.05a5.019 5.019 0 0 1 4.325-2.5c2.3 0 4.182 1.236 4.845 3.125h.02a3.852 3.852 0 0 1 3.868 3.384 3.75 3.75 0 0 1-3.733 4.116h-2.5V17.5h1.875v1.25Z"/></svg>
+      <p>This is a <strong>carbon-neutral</strong> delivery</p>
+    </div>
+    <div id="confirm-order">
+      <button type="submit" id="confirm-button">Confirm Order</button>
+    </div>`;
+    const deleteButtons = document.querySelectorAll('.delete-item-cart');
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const itemName = button.dataset.name;
+        cartItems = cartItems.filter(item => item.name !== itemName);
+
+        const productCard = document.querySelector(`.card img[alt="${itemName}"]`).closest('.card');
+        if (productCard) {
+          const buttonInActive = productCard.querySelector('.button-listing');
+          const buttonActive = productCard.querySelector('.button-hidden');
+          const img = productCard.querySelector('img');
+          const qty = productCard.querySelector('.qty');
+
+          buttonInActive.style.display = 'flex';
+          buttonActive.style.display = 'none';
+          img.style.border = 'none';
+          qty.textContent = '1';
+        }
+
+        cartUpdate();
+      });
+    });
+    
+    }
 }
     
