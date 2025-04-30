@@ -225,10 +225,10 @@ hr{
 #cart-total p{
     font-family: "Red Hat Text";
     font-size:12px;
-    color:black;
+    color:hsl(14, 65%, 9%);
 }
 #cart-total span{
-    color:black;
+    color:hsl(14, 65%, 9%);
     font-family: "Red Hat Text";
     font-weight: 700;
     font-size:18px;
@@ -347,7 +347,7 @@ hr{
     display: flex;
     position: absolute;
     right:35px;
-    color:black;
+    color:hsl(14, 65%, 9%);
 }
 #modalSubmit hr{
     border:1px solid #F6F2EF;
@@ -364,10 +364,10 @@ hr{
 #cart-total-sub p{
     font-family: "Red Hat Text";
     font-size:12px;
-    color:black;
+    color:hsl(14, 65%, 9%);
 }
 #cart-total-sub span{
-    color:black;
+    color:hsl(14, 65%, 9%);
     font-family: "Red Hat Text";
     font-weight: 700;
     font-size:18px;
@@ -599,10 +599,10 @@ hr{
     #cart-total p{
         font-family: "Red Hat Text";
         font-size:16px;
-        color:black;
+        color:hsl(14, 65%, 9%);
     }
     #cart-total span{
-        color:black;
+        color:hsl(14, 65%, 9%);
         font-family: "Red Hat Text";
         font-weight: 700;
         font-size:22px;
@@ -682,10 +682,10 @@ hr{
     #cart-total-sub p{
         font-family: "Red Hat Text";
         font-size:16px;
-        color:black;
+        color:hsl(14, 65%, 9%);
     }
     #cart-total-sub span{
-        color:black;
+        color:hsl(14, 65%, 9%);
         font-family: "Red Hat Text";
         font-weight: 700;
         font-size:22px;
@@ -714,7 +714,7 @@ hr{
 }
 @media screen and (max-width: 440px) {
     body {
-        background-color: #FCF8F5;
+        background-color: hsl(20, 50%, 98%);
         margin: 0 16px;
     }
     main {
@@ -725,7 +725,7 @@ hr{
       margin: 0 auto;
     }
     h1 {
-      font-size: 44px;
+      font-size: 36px;
       margin-bottom:15px;
       font-weight: 800;
     }
