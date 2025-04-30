@@ -100,7 +100,7 @@ function cartUpdate() {
   if (cartCount === 0) {
       cart.innerHTML = `
           <h1>Your Cart (<span>0</span>)</h1>
-          <img src="images/illustration-empty-cart.svg" alt="Your cart">
+          <img src="https://raw.githubusercontent.com/sibyl1a/Frontend-Mentor-Product-list-with-cart/335026c686d9b953e4c4e0286a4070805ffebf62/illustration-empty-cart.svg" alt="Your cart">
           <p>Your added items will appear here</p>`;
   } else {
       cart.innerHTML = `
