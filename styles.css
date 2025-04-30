@@ -75,10 +75,10 @@ h1{
     font-size:12px;
     border-radius: 15px;
     border:1px solid rgba(189, 169, 169, 0.822);
-    padding-top:5px;
-    padding-bottom:4px;
-    padding-right:15px;
-    padding-left:15px;
+    padding-top:6px;
+    padding-bottom:6px;
+    padding-right:16px;
+    padding-left:16px;
     display:flex;
     flex-direction: row;
     gap:3px;
@@ -86,8 +86,7 @@ h1{
     position: absolute;
     top:165px;
     right:35px;
-    transition: border 0.5s ease, color 0.5s ease;  
-    display: flex;  
+    transition: border 0.5s ease, color 0.5s ease;    
 }
 .button-listing:hover{
     border:1px solid #C83B0E;
@@ -105,7 +104,7 @@ h1{
     background-color: #C83B0E;    
     width:102px;
     border-radius: 15px;
-    padding: 6px 9px;
+    padding: 7px 9px;
     display: none;
     align-items: center;
     justify-content: space-between;
@@ -162,6 +161,8 @@ h1{
     width:40%;
     display: block;
     margin: 0 auto;
+    border: 2px solid transparent; 
+    box-sizing: border-box;
 }
 #cart p{
     color: hsl(12, 20%, 44%);
@@ -231,7 +232,7 @@ hr{
     font-family: "Red Hat Text";
     font-weight: 700;
     font-size:18px;
-    margin-left:130px;
+    margin-left:120px;
     margin-top:0;
     padding:0;
 }
@@ -240,7 +241,7 @@ hr{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap:8px;
+    gap:5px;
     background-color: #FCF8F5;
     border-radius: 4px;
 }
@@ -275,4 +276,1051 @@ hr{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.delete-item-cart:hover{
+    border:1px solid black;
+}
+.delete-item-cart:hover svg path {
+    fill: black;
+  }
+#confirm-button:hover{
+    background-color:#952C0C;
+    cursor:pointer;
+}
+#modalSubmit{
+    display:none;
+    flex-direction: column;
+    position:fixed;
+    top:30%;
+    left:30%;
+    align-items: left;
+    justify-content: center;
+    padding:30px 30px;
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    z-index:12;
+}
+#modalSubmit h2{
+    font-size:28px;
+    font-family: "Red Hat Text";
+    margin:10px 0 0 0;
+    padding:0;
+}
+#modalSubmit p{
+    font-family: "Red Hat Text";
+    font-size:12px;
+    color:hsl(12, 20%, 44%);
+    margin:0 0 15px 0;
+}
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display:none;
+}
+.order-info-submit{
+    display:flex;
+    flex-direction: row;
+    background-color: hsl(20, 50%, 98%);
+    padding:15px 20px 7px 15px;
+}
+.order-info-submit img{
+    width:40px;
+    height:40px;
+    border-radius: 3px;
+    margin-right:10px;
+}
+.image-div{
+    display:flex;
+    flex-direction: row;
+}
+.order-main-info{
+    display:flex;
+    flex-direction: column;
+}
+.submit-total span{
+    display: flex;
+    position: absolute;
+    right:35px;
+    color:black;
+}
+#modalSubmit hr{
+    border:1px solid #F6F2EF;
+    margin:0 auto;
+    width:90%;
+}
+#cart-total-sub{
+    display: flex;
+    flex-direction: row;
+    background-color: #FCF8F5;
+    padding:10px 15px;
+    margin-top:5px;
+}
+#cart-total-sub p{
+    font-family: "Red Hat Text";
+    font-size:12px;
+    color:black;
+}
+#cart-total-sub span{
+    color:black;
+    font-family: "Red Hat Text";
+    font-weight: 700;
+    font-size:18px;
+    margin-left:162px;
+    margin-top:0;
+    padding:0;
+}
+.order-details {
+    background-color: hsl(20, 50%, 98%); 
+    padding: 5px; 
+    border-radius: 8px; 
+    margin-top: 5px; 
+}
+
+#close-modal{
+    margin: 20px auto 0;
+    padding: 10px 20px; 
+    background-color: #C83B0E; 
+    color: white; 
+    font-family: "Red Hat Text";
+    border: none; 
+    border-radius: 18px; 
+    cursor: pointer; 
+    width: 100%;
+}
+
+@media screen and (max-width:1440px) and (max-height:1361px){
+    h1{
+        font-size: 52px;
+    }
+    body{
+        background-color: #FCF8F5;
+        margin-left: 100px;
+        margin-top:80px;
+    }
+    .product-list{
+        background-color: transparent;
+        display:grid;
+        grid-template-columns: repeat(3, 290px);
+        position: relative;
+    }
+    .card{
+        background-color: transparent;
+        display:flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        border-radius: 8px;
+        width:285px;
+        height: 360px;
+        overflow: hidden;
+    }
+    .card img{
+        height: 260px;
+        width:280px;
+        border-radius: 8px; 
+        object-fit: cover;border: 2px solid transparent; 
+        box-sizing: border-box;
+    }
+    .info{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height:70px;
+        width:280px;
+    }
+    .info h3{
+        color:hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:14px;
+        font-weight: 400;
+        margin-top:25px;
+        margin-bottom:0;
+    }
+    .info p{
+        color:hsl(14, 65%, 9%);
+        font-family: "Red Hat Text";
+        font-size:18px;
+        font-weight: 600;
+        margin:0;
+        padding:0;
+    }
+    .info .price{
+        color:#C83B0E;
+        font-family: "Red Hat Text";
+        font-size:18px;
+        font-weight: 600;
+    }
+    .button-listing{
+        background-color: white;
+        font-family: "Red Hat Text";
+        font-weight: 600;
+        font-size:16px;
+        border-radius: 30px;
+        border:1px solid rgba(189, 169, 169, 0.822);
+        padding-top:13px;
+        padding-bottom:13px;
+        padding-right:24px;
+        padding-left:24px;
+        display:flex;
+        flex-direction: row;
+        gap:3px;
+        z-index:10;
+        position: absolute;
+        top:235px;
+        right:65px;
+        transition: border 0.5s ease, color 0.5s ease;  
+    }
+    .button-listing:hover{
+        border:1px solid #C83B0E;
+        color: #C83B0E;
+        cursor:pointer;
+    }
+    .button-listing svg{
+        width:20px;
+        height:20px;
+    }
+    .button-hidden{
+        position: absolute;
+        top:235px;
+        right:66px;
+        color:white;
+        background-color: #C83B0E;    
+        width:114px;
+        border-radius: 30px;
+        padding: 13px 22px;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .minus,
+    .plus {
+        background-color: #C83B0E;
+        border: 1px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 6px; 
+    }
+    .qty{
+        font-family: "Red Hat Text";
+        font-size:14px;
+        font-weight: 600;
+    }
+    #cart{
+        position:absolute;
+        right:50px;
+        top:105px;
+        width:320px;
+        height:auto;
+        background-color: white;
+        border-radius: 12px;
+        padding: 0px 20px 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index:10;
+    }
+    #cart h1{
+        color:#C83B0E;
+        font-family: "Red Hat Text";
+        font-size:24px;
+        font-weight: 700;
+        text-align: left;
+        padding-bottom:15px;
+    }
+    #cart p{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:16px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .cart-items{
+        display:flex;
+        flex-direction: column;
+    }
+    .cart-item-name{
+        font-family: "Red Hat Text";
+        font-weight: 600;
+        font-size:16px;
+    }
+    .item-info {
+        display: flex;
+        align-items: left; 
+        width: 100%;
+    }
+    .cart-item-quantity,
+    .cart-item-price,
+    .cart-item-total {
+        margin: 2px 10px 0 0;      
+    }
+    .cart-item-quantity{
+        font-family: "Red Hat Text";
+        font-weight: 600;
+        font-size:16px;
+        color:#C83B0E;
+    }
+    .mark{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:10px;
+    }
+    .cart-item-price{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:16px;
+    }
+    .cart-item-total{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:16px;
+        font-weight: 600;
+    }
+    hr{
+        width:100%;
+        border:1px solid hsl(30, 17%, 98%);
+    
+    }
+    #cart-total{
+        display: flex;
+        flex-direction: row;
+        padding:0;
+    }
+    #cart-total p{
+        font-family: "Red Hat Text";
+        font-size:16px;
+        color:black;
+    }
+    #cart-total span{
+        color:black;
+        font-family: "Red Hat Text";
+        font-weight: 700;
+        font-size:22px;
+        margin-left:140px;
+        margin-top:0;
+        padding:0;
+    }
+    #carbon-neutral{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin:0 auto;
+        width:100%;
+        gap:5px;
+        background-color: #FCF8F5;
+        border-radius: 4px;
+    }
+    #carbon-neutral p{
+        color:hsl(14, 65%, 9%);
+    }
+    #confirm-button{
+        color:white;
+        font-size:17px;
+        font-family: "Red Hat Text";
+        background-color: #C83B0E;    
+        border:1px solid #C83B0E;
+        width:90%;
+        border-radius: 30px;
+        margin-top:20px;
+        padding: 15px 0;
+    }
+    #modalSubmit{
+        display:none;
+        flex-direction: column;
+        position:fixed;
+        top:30%;
+        left:30%;
+        justify-content: center;
+        padding:30px 30px;
+        width: 30%;
+        background-color: white;
+        border-radius: 10px;
+        z-index:12;
+    }
+    #modalSubmit h2{
+        font-size:32px;
+        font-family: "Red Hat Text";
+        margin:10px 0 0 0;
+        padding:0;
+    }
+    #modalSubmit p{
+        font-family: "Red Hat Text";
+        font-size:16px;
+        color:hsl(12, 20%, 44%);
+        margin:0 0 15px 0;
+    }
+    .order-info-submit{
+        display:flex;
+        flex-direction: row;
+        background-color: hsl(20, 50%, 98%);
+        padding:15px 20px 7px 15px;
+    }
+    .order-info-submit img{
+        width:50px;
+        height:50px;
+        border-radius:3px;
+        margin-right:10px;
+    }
+    #cart-total-sub{
+        display: flex;
+        flex-direction: row;
+        background-color: #FCF8F5;
+        padding:10px 15px;
+        margin-top:5px;
+    }
+    #cart-total-sub p{
+        font-family: "Red Hat Text";
+        font-size:16px;
+        color:black;
+    }
+    #cart-total-sub span{
+        color:black;
+        font-family: "Red Hat Text";
+        font-weight: 700;
+        font-size:22px;
+        margin-left:225px;
+        margin-top:0;
+        padding:0;
+    }
+    .order-details {
+        background-color: hsl(20, 50%, 98%); 
+        padding: 5px; 
+        border-radius: 8px; 
+        margin-top: 5px; 
+    }
+    #close-modal{
+        margin: 20px auto 0;
+        padding: 15px 25px; 
+        background-color: #C83B0E; 
+        color: white; 
+        font-family: "Red Hat Text";
+        font-size: 18px;
+        border: none; 
+        border-radius: 30px; 
+        cursor: pointer; 
+        width: 100%;
+    }
+}
+@media screen and (max-width: 440px) {
+    body {
+        background-color: #FCF8F5;
+        margin: 0 16px;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      max-width: 360px;
+      position: relative;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 44px;
+      margin-bottom:15px;
+      font-weight: 800;
+    }
+    .product-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0px;
+      width: 340px;
+      position: static;
+    }
+    .card {
+      width: 100%;
+      height: 360px;
+    }
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border:2px solid transparent;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    .info {
+      width: 100%;
+      margin-top:12px;
+    }
+    .info h3 {
+      font-size: 16px;
+    }
+    .info p {
+      font-size: 18px;
+    }
+    .info .price {
+      font-size: 18px;
+    }
+    .button-listing{
+        background-color: white;
+        font-family: "Red Hat Text";
+        font-weight: 600;
+        font-size:16px;
+        border-radius: 30px;
+        border:1px solid rgba(189, 169, 169, 0.822);
+        padding:11px 24px;
+        display:flex;
+        flex-direction: row;
+        gap:3px;
+        z-index:10;
+        position: absolute;
+        top:205px;
+        right:87px;
+        transition: border 0.5s ease, color 0.5s ease;  
+    }
+    .button-listing:hover{
+        border:1px solid #C83B0E;
+        color: #C83B0E;
+        cursor:pointer;
+    }
+    .button-listing svg{
+        width:24px;
+        height:24px;
+    }
+    .button-hidden{
+        position: absolute;
+        top:206px;
+        right:87px;
+        color:white;
+        background-color: #C83B0E;    
+        width:141px;
+        border-radius: 30px;
+        padding:13px 11px;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .minus,
+    .plus {
+        background-color: #C83B0E;
+        border: 1px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 3px; 
+    }
+    .qty{
+        font-family: "Red Hat Text";
+        font-size:14px;
+        font-weight: 600;
+    }
+    #cart {
+        position: static; 
+        width: 100%;
+        max-width: 320px;
+        margin: 5px auto 15px;
+        border-radius: 12px;
+        padding: 15px 0 0 15px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #cart h1 {
+        font-size: 26px;
+        text-align: left;
+        width: 100%;
+        padding-bottom: 10px;
+        margin-top:10px;
+        margin-left:20px;
+    }
+    #cart p {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .cart-items {
+        width: 100%;
+    }
+    .cart-item-name {
+        font-size: 14px;
+        margin:0 10px 4px 10px;
+    }
+    .cart-item-quantity,
+    .cart-item-price,
+    .cart-item-total {
+        font-size: 14px;
+        margin: 2px 10px 2px 10px;
+    }
+    #cart-total {
+        width: 95%; 
+        padding: 0 8px; 
+    }
+    #cart-total p {
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%; 
+        margin: 18px 0; 
+    }
+    #cart-total span {
+        font-size: 20px;
+        margin: 0 20px 0 auto; 
+    }
+    #carbon-neutral {
+        width: 90%;
+        margin:0 12px 0 0;
+        padding:0;
+    }
+    #carbon-neutral p{
+        font-weight: 400!important;
+    }
+    #confirm-button {
+        font-size: 16px;
+        padding: 12px 0;
+        margin: 25px 20px 25px 0;
+        width: 270px;
+        border-radius: 25px;
+    }
+    .delete-item-cart{
+        background-color: transparent;
+        border-radius: 50%;
+        border:1px solid #CAAFA7;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        position: absolute;
+        right:35px;
+        align-items: center;
+        justify-content: center;
+    }
+    .delete-item-cart:hover{
+        border:1px solid black;
+    }
+    .delete-item-cart:hover svg path {
+        fill: black;
+    }
+    #modalSubmit{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto; 
+        min-height: 90vh; 
+        max-height: 95vh;
+        background-color: white;
+        border-radius: 10px;
+        z-index: 12;
+        margin: 0!important;
+        padding: 30px 25px 10px 15px!important;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+    #modalSubmit h2 strong span {
+        font-size: 36px !important;
+        font-family: "Red Hat Text" !important;
+        margin: 0 0 15px 0!important;
+        padding: 0 15px !important;
+        display: block;
+        line-height: 0.8;
+    }
+    #modalSubmit p{
+        font-family: "Red Hat Text";
+        font-size:14px !important;
+        color:hsl(12, 20%, 44%);
+        margin:0 0 15px 0 !important;;
+        padding: 0 17px !important;
+    }
+    #modalSubmit svg{
+        margin:0 0 10px 10px;
+        width:35px;
+        height:35px;
+        flex-shrink: 0;
+    }
+    .order-details{
+        background-color: hsl(20, 50%, 98%);
+        display:flex;
+        flex-direction: column;
+        margin:0 40px 15px 8px!important;
+        padding: 6px; 
+        border-radius: 5px; 
+        width:320px;
+    }
+    .order-info-submit{
+        display:flex;
+        flex-direction: row;
+        width:310px;
+        background-color: hsl(20, 50%, 98%);
+        padding:15px 0 15px 15px;
+        margin:0;
+    }
+    .order-info-submit img{
+        width:50px;
+        height:50px;
+        border-radius:5px;
+        margin: 0 10px 0 0;
+    }
+    #cart-total-sub{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        margin:15px 0 0 0;
+        width: 320px;
+        background-color: hsl(20, 50%, 98%);
+    }
+    #cart-total-sub p{
+        color:hsl(14, 65%, 9%);
+        padding:0;
+        margin: 0 !important;
+        font-weight: 400;
+    }
+    #cart-total-sub span{
+        color:hsl(14, 65%, 9%);
+        font-family: "Red Hat Text";
+        font-weight: 700;
+        font-size:20px;
+        margin: 0; 
+        padding:0;
+    }
+    #close-modal{
+        margin: 20px 15px 40px 15px;
+        padding: 13px 25px; 
+        background-color: #C83B0E; 
+        color: white; 
+        font-family: "Red Hat Text";
+        font-size: 14px;
+        border: none; 
+        border-radius: 30px; 
+        cursor: pointer; 
+        width: 90%;
+    }
+}
+
+/*@media screen and (max-width:1980px) and (max-height:1080px){
+    h1{
+        font-size: 32px;
+    }
+    body{
+        background-color: #FCF8F5;
+        margin-left: 100px;
+        margin-top:60px;
+    }
+    .product-list{
+        background-color: transparent;
+        display:grid;
+        grid-template-columns: repeat(4, 270px);
+        position: relative;
+    }
+    .card{
+        background-color: transparent;
+        display:flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        border-radius: 8px;
+        width:265px;
+        height: 360px;
+        overflow: hidden;
+    }
+    .card img{
+        height: 260px;
+        width:280px;
+        border-radius: 8px; 
+        object-fit: cover;
+    }
+    .info{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height:70px;
+        width:280px;
+    }
+    .info h3{
+        color:hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:14px;
+        font-weight: 400;
+        margin-top:25px;
+        margin-bottom:0;
+    }
+    .info p{
+        color:hsl(14, 65%, 9%);
+        font-family: "Red Hat Text";
+        font-size:18px;
+        font-weight: 600;
+        margin:0;
+        padding:0;
+    }
+    .info .price{
+        color:#C83B0E;
+        font-family: "Red Hat Text";
+        font-size:18px;
+        font-weight: 600;
+    }
+    .button-listing{
+        background-color: white;
+        font-family: "Red Hat Text";
+        font-weight: 600;
+        font-size:16px;
+        border-radius: 30px;
+        border:1px solid rgba(189, 169, 169, 0.822);
+        padding-top:13px;
+        padding-bottom:13px;
+        padding-right:24px;
+        padding-left:24px;
+        display:flex;
+        flex-direction: row;
+        gap:3px;
+        z-index:10;
+        position: absolute;
+        top:235px;
+        right:65px;
+        transition: border 0.5s ease, color 0.5s ease;  
+    }
+    .button-listing:hover{
+        border:1px solid #C83B0E;
+        color: #C83B0E;
+        cursor:pointer;
+    }
+    .button-listing svg{
+        width:20px;
+        height:20px;
+    }
+    .button-hidden{
+        position: absolute;
+        top:235px;
+        right:66px;
+        color:white;
+        background-color: #C83B0E;    
+        width:114px;
+        border-radius: 30px;
+        padding: 13px 22px;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .minus,
+    .plus {
+        background-color: #C83B0E;
+        border: 1px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 6px; 
+    }
+    .qty{
+        font-family: "Red Hat Text";
+        font-size:14px;
+        font-weight: 600;
+    }
+    #cart{
+        position:absolute;
+        right:50px;
+        top:105px;
+        width:320px;
+        height:auto;
+        background-color: white;
+        border-radius: 12px;
+        padding: 0px 20px 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index:10;
+    }
+    #cart h1{
+        color:#C83B0E;
+        font-family: "Red Hat Text";
+        font-size:24px;
+        font-weight: 700;
+        text-align: left;
+        padding-bottom:15px;
+    }
+    #cart p{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:16px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .cart-items{
+        display:flex;
+        flex-direction: column;
+    }
+    .cart-item-name{
+        font-family: "Red Hat Text";
+        font-weight: 600;
+        font-size:16px;
+    }
+    .item-info {
+        display: flex;
+        align-items: left; 
+        width: 100%;
+    }
+    .cart-item-quantity,
+    .cart-item-price,
+    .cart-item-total {
+        margin: 2px 10px 0 0;      
+    }
+    .cart-item-quantity{
+        font-family: "Red Hat Text";
+        font-weight: 600;
+        font-size:16px;
+        color:#C83B0E;
+    }
+    .mark{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:10px;
+    }
+    .cart-item-price{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:16px;
+    }
+    .cart-item-total{
+        color: hsl(12, 20%, 44%);
+        font-family: "Red Hat Text";
+        font-size:16px;
+        font-weight: 600;
+    }
+    hr{
+        width:100%;
+        border:1px solid hsl(30, 17%, 98%);
+    
+    }
+    #cart-total{
+        display: flex;
+        flex-direction: row;
+        padding:0;
+    }
+    #cart-total p{
+        font-family: "Red Hat Text";
+        font-size:16px;
+        color:black;
+    }
+    #cart-total span{
+        color:black;
+        font-family: "Red Hat Text";
+        font-weight: 700;
+        font-size:22px;
+        margin-left:140px;
+        margin-top:0;
+        padding:0;
+    }
+    #carbon-neutral{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin:0 auto;
+        width:100%;
+        gap:5px;
+        background-color: #FCF8F5;
+        border-radius: 4px;
+    }
+    #carbon-neutral p{
+        color:hsl(14, 65%, 9%);
+    }
+    #confirm-button{
+        color:white;
+        font-size:17px;
+        font-family: "Red Hat Text";
+        background-color: #C83B0E;    
+        border:1px solid #C83B0E;
+        width:90%;
+        border-radius: 30px;
+        margin-top:20px;
+        padding: 15px 0;
+    }
+    #modalSubmit{
+        display:none;
+        flex-direction: column;
+        position:fixed;
+        top:30%;
+        left:30%;
+        align-items: left;
+        justify-content: center;
+        padding:30px 30px;
+        width: 30%;
+        background-color: white;
+        border-radius: 10px;
+        z-index:12;
+    }
+    #modalSubmit h2{
+        font-size:32px;
+        font-family: "Red Hat Text";
+        margin:10px 0 0 0;
+        padding:0;
+    }
+    #modalSubmit p{
+        font-family: "Red Hat Text";
+        font-size:16px;
+        color:hsl(12, 20%, 44%);
+        margin:0 0 15px 0;
+    }
+    .order-info-submit{
+        display:flex;
+        flex-direction: row;
+        background-color: hsl(20, 50%, 98%);
+        padding:15px 20px 7px 15px;
+    }
+    .order-info-submit img{
+        width:50px;
+        height:50px;
+        border-radius:3px;
+        margin-right:10px;
+    }
+    #cart-total-sub{
+        display: flex;
+        flex-direction: row;
+        background-color: #FCF8F5;
+        padding:10px 15px;
+        margin-top:5px;
+    }
+    #cart-total-sub p{
+        font-family: "Red Hat Text";
+        font-size:16px;
+        color:black;
+    }
+    #cart-total-sub span{
+        color:black;
+        font-family: "Red Hat Text";
+        font-weight: 700;
+        font-size:22px;
+        margin-left:225px;
+        margin-top:0;
+        padding:0;
+    }
+    .order-details {
+        background-color: hsl(20, 50%, 98%); 
+        padding: 5px; 
+        border-radius: 8px; 
+        margin-top: 5px; 
+    }
+    #close-modal{
+        margin: 20px auto 0;
+        padding: 15px 25px; 
+        background-color: #C83B0E; 
+        color: white; 
+        font-family: "Red Hat Text";
+        font-size: 18px;
+        border: none; 
+        border-radius: 30px; 
+        cursor: pointer; 
+        width: 100%;
+    }
 }
